@@ -6,7 +6,7 @@ app.controller('SecretSantaNameDrawingController', ['$scope', '$timeout' , funct
   // begin
 
 $scope.currentlyViewing ='inputPage';
-$scope.commaSeparatedListOfNames ='Alice, Andy, Ashley, Betty, Billy, Bobby, Bradley, Chris, Craig, Dorothy, Emily, Gregory, Jack, Jason, Jennifer, Jessica, Linda, Maggie, Ryan, Tony';
+$scope.commaSeparatedListOfNames ='Vlad Anton,  Alexandru Birlica , Silvia Brindusescu,  Valentin Buzea, Nicu Damian , Daniel Dragomir, Marius Ionescu, Daniel Iordache, Radu Jinga, Marius Macovei, Theodor Macovei, Sabina Mihaila, Mihai Mina , Florin Nastase, Razvan Nitu, Vlad Pelin, Ioana Popescu , Robert Radu, Teodora Simion, Paul Stoian, Stefan Valvoiu';
 $scope.personWhoseNameWasLastClicked='';
 function generateSecretSantaHash(commaSeparatedListOfNames) {
     var resultOfSplittingByComma = commaSeparatedListOfNames.split(',');
