@@ -1,0 +1,43 @@
+<html ng-app="SecretSantaNameDrawingApp">
+<head>
+  <meta charset="UTF-8">
+  <title>SecretSantaNameDrawingApp</title>
+  <style>
+    body     { font-family: sans-serif; padding: 30px; }
+    button   { font-size: 25px; }
+    textarea {
+      font-family: sans-serif;
+      font-size: 25px;
+      width: 50%;
+    }
+  </style>
+  <script src="js/underscore.js"></script>
+  <script src="js/angular.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body ng-controller="SecretSantaNameDrawingController">
+  <div ng-show="currentlyViewing === 'inputPage'">
+    <h1>Who participates in the name drawing?</h1>
+    <form>
+      <textarea rows="10"
+                placeholder="Who participates in the name drawing? (comma-separated list of names)"
+                ng-model ="commaSeparatedListOfNames"></textarea>
+      <br>
+      <br>
+      <button ng-click="drawNames(commaSeparatedListOfNames)">Secret Santa!</button>
+      <br>
+      <br>
+    </form>
+  </div>
+
+  <div ng-show="currentlyViewing === 'outputPage'">
+    <h1>Click on names to uncover secrets</h1>
+    <div ng-repeat="(hashKey,hashValue) in secretSantaHash">
+      <button ng-click="setPersonTo(hashKey)">{{hashKey}}{{personWhoseNameWasLastClicked === hashKey ? " , you are " + hashValue + "'s Secret Santa":""}}</button>
+      <br>
+      <br>
+    </div>
+    <div>
+</body>
+</html>
+
